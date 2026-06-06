@@ -129,9 +129,7 @@ Bucket runs add `size_bucket`; weighted runs add `weight_pct`; LLM runs add `N` 
 | File | Content |
 |---|---|
 | `benchmark-nuxs-en.docx` | Full technical report (English) |
-| `benchmark-nuxs-pt.docx` | Full technical report (Portuguese) |
 | `manifesto-nuxs-en.docx` | Companion manifesto (English) |
-| `manifesto-nuxs-pt.docx` | Companion manifesto (Portuguese) |
 
 ### Raw data (JSONL — one sample per line)
 
@@ -211,9 +209,7 @@ Any future re-runs that change reported numbers will be tagged as a new release;
 - Benchmark UI: [nuxs.ai/benchmark](https://nuxs.ai/benchmark)
 - Download / install: [nuxs.ai/download](https://nuxs.ai/download)
 - Technical report (English): `benchmark-nuxs-en.docx`
-- Technical report (Portuguese): `benchmark-nuxs-pt.docx`
 - Manifesto (English): `manifesto-nuxs-en.docx`
-- Manifesto (Portuguese): `manifesto-nuxs-pt.docx`
 
 ---
 
