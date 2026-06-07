@@ -2,13 +2,27 @@
   <img src="assets/nuxs-lockup-white.svg" alt="NUXS" width="220" />
 </p>
 
-# NUXS — Universal context compression for AI agents
+<h1 align="center">Up to 99% token savings on AI agent context.<br/>Free.</h1>
 
-> Reproducible measurements of context compression for AI agents.
-> Reference engine: **nuxs-capsule 0.1.57** · Tokenizer: **cl100k_base**
-> Website: **[nuxs.ai](https://nuxs.ai)** · Try it live: **[nuxs.ai/playground](https://nuxs.ai/playground)**
+<p align="center">
+  <strong>NUXS is universal context compression for AI agents.</strong><br/>
+  Compresses HARs, huge JSONs, slow query logs, codebases, RAG chunks — <em>before</em> the agent reads them.<br/>
+  Provider-agnostic: Claude, Cursor, Codex, Cline, Aider, any MCP-compatible agent.
+</p>
 
-This repository publishes the raw data and the technical report for the NUXS context-compression study. Every metric stated in the report is recomputable from the files in this repository.
+<p align="center">
+  <a href="https://nuxs.ai/playground"><strong>🟢 Try it in the browser (free, no signup)</strong></a> ·
+  <a href="https://nuxs.ai/download"><strong>⬇️ Install the CLI (free beta)</strong></a> ·
+  <a href="https://nuxs.ai/benchmark">📊 Benchmark UI</a>
+</p>
+
+```bash
+npm install -g nuxs-capsule
+nuxs-capsule login
+```
+
+> **87.46%** aggregate margin over **180,590,521 auditable tokens** · up to **99%** on log/api/build/RAG capsules · engine: `nuxs-capsule 0.1.57` · tokenizer: `cl100k_base`.
+> Every metric in this repo is recomputable from the published raw files.
 
 ---
 
