@@ -3,11 +3,16 @@
 // Auditado: por cápsula reporta margem volume E margem single-pass (1ª amostra
 // crua, sem mutação) — o single-pass é o número honesto anti-inflação.
 // LLM-pagas: chamadas REAIS via proxy (semantic cache absorve quase-dupes — contado).
-process.env.NUXS_SERVER_URL='https://pixeldesk-api.onrender.com';
-process.env.NUXS_LICENSE_KEY='nxs_79af918a9f9e68dd986cbf783808e6f021806d5226bbfe5a';
+// Set these in your environment before running:
+//   NUXS_LICENSE_KEY  = your Nuxs license (get one at nuxs.ai/register)
+//   NUXS_REPO_ROOT    = absolute path to a local nuxs-capsule checkout with dist/ built
+//   NUXS_SERVER_URL   = backend endpoint (the CLI defaults to the production one)
+if (!process.env.NUXS_LICENSE_KEY) throw new Error('set NUXS_LICENSE_KEY before running');
+if (!process.env.NUXS_REPO_ROOT) throw new Error('set NUXS_REPO_ROOT (path to local nuxs-capsule with dist/ built)');
+if (!process.env.NUXS_SERVER_URL) throw new Error('set NUXS_SERVER_URL (see nuxs-capsule package for the production endpoint)');
+const NX=process.env.NUXS_REPO_ROOT;
 import { readFileSync, writeFileSync, appendFileSync } from 'node:fs';
-import { encode } from '/Users/josuca/Documents/nuxs-capsule/node_modules/gpt-tokenizer/esm/main.js';
-const NX='/Users/josuca/Documents/nuxs-capsule';
+const { encode } = await import(`${NX}/node_modules/gpt-tokenizer/esm/main.js`);
 const rd=p=>readFileSync(p,'utf8'), tok=s=>encode(s).length;
 const LOG='/tmp/nuxs-bench100/progress.log';
 const log=m=>{const l=`[${new Date().toISOString()}] ${m}`;console.log(l);appendFileSync(LOG,l+'\n');};
