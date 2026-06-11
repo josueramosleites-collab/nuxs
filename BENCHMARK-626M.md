@@ -233,33 +233,3 @@ The headline of this study (626,784,439 tokens processed · 574,252,194 saved ·
 
 Reconciliation: the rows total 626,779,041 processed / 574,248,120 saved — within rounding of the audited 626,784,439 / 574,252,194 (91.62%). "session" is a **retired** capsule (no longer in the 17-capsule product), kept here only so the rows reconcile to the audited total; the three multimodal capabilities (image-LLM, meeting, video) are a separate 1M phase, outside this text/code total.
 
-
----
-
-## Cumulative total — per-capsule distribution
-
-The study headline — **626,784,439** tokens processed · **574,252,194** saved · **91.62%** weighted margin — is the sum of five separate audited runs. The table below distributes that cumulative total **by capsule**: each row sums the capsule across all five runs (official 180.3M + F4 127.6M + wild-hook 20.2M + 100M + 200M), TEXT and CODE profiles combined.
-
-| Capsule | Class | Tokens processed | Tokens saved | Margin |
-|---|---|---:|---:|:---:|
-| log | algorithmic | 93,336,248 | 92,478,692 | 99.1% |
-| codebase | algorithmic | 68,100,699 | 57,771,407 | 84.8% |
-| diff | algorithmic | 63,931,733 | 51,418,235 | 80.4% |
-| api | algorithmic | 55,406,079 | 55,329,455 | 99.9% |
-| prompt | algorithmic | 49,918,938 | 49,571,251 | 99.3% |
-| rag | LLM | 42,674,288 | 39,067,940 | 91.5% |
-| build | algorithmic | 39,381,798 | 38,577,940 | 98.0% |
-| test | algorithmic | 36,577,472 | 33,486,726 | 91.6% |
-| schema | algorithmic | 28,994,463 | 16,818,449 | 58.0% |
-| network | algorithmic | 28,443,603 | 28,257,309 | 99.3% |
-| apispec | algorithmic | 22,007,114 | 18,966,567 | 86.2% |
-| stack | LLM | 21,944,586 | 20,138,460 | 91.8% |
-| threads | LLM | 20,308,235 | 18,773,742 | 92.4% |
-| events | LLM | 19,003,173 | 18,769,332 | 98.8% |
-| sql | LLM | 15,555,985 | 15,260,167 | 98.1% |
-| pdf | LLM | 15,276,099 | 13,734,220 | 89.9% |
-| session | retired | 3,901,389 | 3,825,574 | 98.1% |
-| image | algorithmic | 2,017,139 | 2,002,654 | 99.3% |
-| **TOTAL** | — | **626,779,041** | **574,248,120** | **91.62%** |
-
-*Reconciliation: rows total 626,779,041 processed / 574,248,120 saved — within rounding of the audited 626,784,439 / 574,252,194 (91.62%). "session" is a retired capsule (no longer in the 17-capsule product), kept only so the rows reconcile to the audited total; the three multimodal capabilities are a separate 1M phase, outside this text/code total.*
