@@ -16,10 +16,7 @@
   <a href="https://nuxs.ai/benchmark">📊 Benchmark UI</a>
 </p>
 
-```bash
-npm install -g nuxs-capsule
-nuxs-capsule login
-```
+**Get a free license at [nuxs.ai/register](https://nuxs.ai/register?next=/painel)** — the panel hands you a one-click installer (macOS · Windows · Linux) and your license. The free tier is metered (50M tokens lifetime · 3 devices), so the install is tied to an account from day one.
 
 > **91.62%** weighted margin over **626,784,439 cumulative auditable tokens** · current run **95.42%** (200M, v0.5.33) · up to **99%** on log/api/build/RAG capsules · tokenizer: `cl100k_base`.
 > Every metric in this repo is recomputable from the published raw files. Full consolidated study: **[BENCHMARK-626M.md](BENCHMARK-626M.md)**.
@@ -32,12 +29,7 @@ The fastest way to understand NUXS is to feed it your own context and watch the 
 
 - **Playground** — paste a HAR, a JSON payload, a slow query log, a code dump or pick one of the sample fixtures: **[nuxs.ai/playground](https://nuxs.ai/playground)**
 - **Benchmark UI** — explore the report inline with sortable tables: **[nuxs.ai/benchmark](https://nuxs.ai/benchmark)**
-- **Install the CLI** — wire it into Claude Code, Cursor, Cline or any MCP-compatible agent in 30 seconds: **[nuxs.ai/download](https://nuxs.ai/download)**
-
-```bash
-npm install -g nuxs-capsule
-nuxs-capsule login
-```
+- **Install the CLI** — sign up for a free license, the panel hands you a one-click installer wired into Claude Code, Cursor, Cline or any MCP-compatible agent: **[nuxs.ai/register](https://nuxs.ai/register?next=/painel)**
 
 ---
 
@@ -54,7 +46,7 @@ The product is organized into **17 text capsules** — **11 algorithmic** (log, 
 NUXS is in **open beta** and the CLI is **free to install and use** while we validate with early users. Concretely:
 
 - **Free playground** (`nuxs.ai/playground`) — algorithmic capsules run in-browser. No signup needed. Soft cap per IP to keep it open to everyone.
-- **Free CLI beta** — install `nuxs-capsule` from npm, log in once with `nuxs-capsule login`, and the hook wires itself into every MCP-compatible agent on the device. Current cap: **50M tokens lifetime · 3 devices**. No card required.
+- **Free CLI beta** — get a free license at **[nuxs.ai/register](https://nuxs.ai/register?next=/painel)**, the panel hands you the installer (macOS · Windows · Linux). The hook wires itself into every MCP-compatible agent on the device. Current cap: **50M tokens lifetime · 3 devices**. No card required.
 - **Paid tiers** (Solo / Team / Enterprise) lift the monthly cap, raise the device limit, and unlock the LLM-based capsules and multimodal capabilities at scale. Details on `nuxs.ai`.
 
 The 11 algorithmic capsules are deterministic and run entirely on-device. The 6 LLM-based capsules call a model — by default the NUXS-managed proxy, optionally your own key.
@@ -85,9 +77,7 @@ Nothing here is a commitment to a specific date — these are the directions we'
 | Taxonomy | **11 algorithmic + 6 LLM + 3 multimodal** |
 | Full consolidated study | **[BENCHMARK-626M.md](BENCHMARK-626M.md)** |
 
-_The per-capsule and per-run tables further down this README correspond to the archived Jun-5 study (180.3M, 87.45%) — the historical reference of the series. The current per-capsule breakdown is in [BENCHMARK-626M.md](BENCHMARK-626M.md)._
-
-All numbers measured with `cl100k_base` via the public `gpt-tokenizer` package.
+All numbers measured with `cl100k_base` via the public `gpt-tokenizer` package. Full per-capsule and per-run breakdown in **[BENCHMARK-626M.md](BENCHMARK-626M.md)**.
 
 ---
 
@@ -147,35 +137,14 @@ Bucket runs add `size_bucket`; weighted runs add `weight_pct`; LLM runs add `N` 
 | `benchmark-nuxs-en.docx` | Full technical report (English) |
 | `manifesto-nuxs-en.docx` | Companion manifesto (English) |
 
-### Raw data (JSONL — one sample per line)
-
-| File | Content | Samples |
-|---|---|---:|
-| `BENCHMARK-626M.md` | **Consolidated study (626.8M, 91.62%) — current** | 9,333 (run) |
-| `benchmark-200m-summary.json` | Current run summary (200M, v0.5.33) | — |
-| `benchmark-200m-harness.mjs` | Current run harness (reproducible) | — |
-| `benchmark-200m-run.log` | Current run execution log | — |
-| `benchmark-raw.jsonl` | 1st round — synthetic | 328 |
-| `benchmark-large-raw.jsonl` | Large run — synthetic, XS→XXL buckets | 400 |
-| `benchmark-rag-raw.jsonl` | RAG/LLM profile — synthetic | 980 |
-| `benchmark-r2-raw.jsonl` | Round 2 — synthetic | 707 |
-| `benchmark-paid-raw.jsonl` | Backend run (includes multimodal) | 18 |
-| `benchmark-20-raw.jsonl` | Round 20 — XL/XXL samples | 30 |
-| `benchmark-code-raw.jsonl` | Programmer profile — synthetic | 71 |
-| `benchmark-codereal-raw.jsonl` | Real code — full corpus | 7,035 |
-| `benchmark-buildindex40-raw.jsonl` | Typical production hook — deterministic top-40 real | 40 |
-
-### Aggregate summaries (JSON)
+### Current study (626.8M cumulative, 91.62% weighted margin)
 
 | File | Content |
 |---|---|
-| `benchmark-large-summary.json` | Per-bucket and per-capsule aggregates |
-| `benchmark-rag-summary.json` | Weighted RAG/LLM profile aggregate |
-| `benchmark-r2-summary.json` | Round 2 aggregate |
-| `benchmark-paid-summary.json` | Backend run aggregate (includes multimodal) |
-| `benchmark-code-summary.json` | Programmer profile aggregate |
-| `benchmark-codereal-summary.json` | Real code corpus aggregate |
-| `benchmark-buildindex40-summary.json` | Typical hook run, with declared sampling criterion |
+| `BENCHMARK-626M.md` | **Consolidated study (626.8M, 91.62%) — full per-capsule and per-run breakdown** |
+| `benchmark-200m-summary.json` | Current run summary (200M, v0.5.33) |
+| `benchmark-200m-harness.mjs` | Current run harness (reproducible) |
+| `benchmark-200m-run.log` | Current run execution log |
 
 ---
 
