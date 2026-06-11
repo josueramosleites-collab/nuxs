@@ -2,7 +2,7 @@
   <img src="assets/nuxs-lockup-white.svg" alt="NUXS" width="220" />
 </p>
 
-<h1 align="center">Up to 99% token savings on AI agent context.<br/>Free.</h1>
+<h1 align="center">Cut up to 99% of intercepted tokens.<br/>Free.</h1>
 
 <p align="center">
   <strong>NUXS is universal context compression for AI agents.</strong><br/>
@@ -45,7 +45,7 @@ nuxs-capsule login
 
 NUXS is a context compression layer that sits between an AI agent and the model. It reduces the input — conversation history, logs, schemas, diffs, code, search results, and other agent context — before it reaches the model, returning a smaller, denser, cheaper input. NUXS is provider-agnostic and works with Claude, Cursor, Codex, Cline, Aider, or any integration via SDK or proxy, using your own key.
 
-The product is organized into **17 text capsules**, each specialized in a type of context (log, api, network, diff, test, build, schema, apispec, prompt, codebase, stack, sql, events, session, threads, pdf, rag), plus **3 multimodal capabilities** (image, video, meeting) that translate media into dense textual context.
+The product is organized into **17 text capsules** — **11 algorithmic** (log, api, network, schema, codebase, diff, test, build, apispec, prompt, image) and **6 LLM-based** (rag, sql, stack, threads, events, pdf) — plus **3 multimodal capabilities** (image-LLM, video, meeting) that translate media into dense textual context.
 
 ---
 
@@ -54,10 +54,10 @@ The product is organized into **17 text capsules**, each specialized in a type o
 NUXS is in **open beta** and the CLI is **free to install and use** while we validate with early users. Concretely:
 
 - **Free playground** (`nuxs.ai/playground`) — algorithmic capsules run in-browser. No signup needed. Soft cap per IP to keep it open to everyone.
-- **Free CLI beta** — install `nuxs-capsule` from npm, log in once with `nuxs-capsule login`, and the hook wires itself into every MCP-compatible agent on the device. Current cap: **500 capsules / month / device**. No card required.
+- **Free CLI beta** — install `nuxs-capsule` from npm, log in once with `nuxs-capsule login`, and the hook wires itself into every MCP-compatible agent on the device. Current cap: **50M tokens lifetime · 3 devices**. No card required.
 - **Paid tiers** (Solo / Team / Enterprise) lift the monthly cap, raise the device limit, and unlock the LLM-based capsules and multimodal capabilities at scale. Details on `nuxs.ai`.
 
-The 10 algorithmic capsules are deterministic and run entirely on-device. The 7 LLM-based capsules call a model — by default the NUXS-managed proxy, optionally your own key.
+The 11 algorithmic capsules are deterministic and run entirely on-device. The 6 LLM-based capsules call a model — by default the NUXS-managed proxy, optionally your own key.
 
 ---
 
@@ -125,7 +125,7 @@ npm install gpt-tokenizer
 # 4. Compare with the corresponding *-summary.json file.
 ```
 
-Algorithmic capsules (10 of 17) are deterministic — the same input produces the same output byte-for-byte. LLM-based capsules (7 of 17) are sampled at low temperature; the raw files declare `N` and `provider` per configuration.
+Algorithmic capsules (11 of 17) are deterministic — the same input produces the same output byte-for-byte. LLM-based capsules (6 of 17) are sampled at low temperature; the raw files declare `N` and `provider` per configuration.
 
 Each line of every raw file contains, at minimum:
 
@@ -213,7 +213,7 @@ The study was conducted internally by the NUXS team. The raw files in this repos
 
 | Field | Value |
 |---|---|
-| Engine version | `nuxs-capsule 0.1.57` |
+| Engine version | `nuxs-capsule 0.5.37` (current on npm) · `0.5.33` (engine that ran the 200M study) |
 | Tokenizer | `cl100k_base` (via `gpt-tokenizer`) |
 | Study date | June 6, 2026 |
 | Report version | v3 (current) |
