@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-06-02T05:29:58.329Z",
+  "methodology": "Real calls to the NUXS backend API with enterprise license. LLM results sampled (N per capsule) with variance — temperature 0.1, non-deterministic. Ratio = provider input_tokens / output_tokens (structured-capsule compression). cl100k_base counts also recorded per call in raw. Cost from provider list pricing (Gemini Flash-Lite $0.10/$0.40 per M; image input $0.075/M).",
+  "per_capsule": {
+    "stack": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 42.14,
+      "ratios": [
+        42.14,
+        42.14
+      ],
+      "total_cost_usd": 0.003174,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "sql": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 18.29,
+      "ratios": [
+        19.977,
+        16.603
+      ],
+      "total_cost_usd": 0.003624,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "events": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 52.427,
+      "ratios": [
+        52.427,
+        52.427
+      ],
+      "total_cost_usd": 0.005416,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "session": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 35.586,
+      "ratios": [
+        29.897,
+        41.275
+      ],
+      "total_cost_usd": 0.002274,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "threads": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 51.3005,
+      "ratios": [
+        62.396,
+        40.205
+      ],
+      "total_cost_usd": 0.002078,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "pdf": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 2.975,
+      "ratios": [
+        2.975,
+        2.975
+      ],
+      "total_cost_usd": 0.00558,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true,
+      "note": "output hit 4000-token cap (truncated); ratio is a lower bound"
+    },
+    "rag": {
+      "group": "LLM",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 21.387,
+      "ratios": [
+        21.387,
+        21.387
+      ],
+      "total_cost_usd": 0.002858,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "image": {
+      "group": "multimodal",
+      "n": 2,
+      "n_blocked": 0,
+      "p50_ratio": 0.8075,
+      "ratios": [
+        0.699,
+        0.916
+      ],
+      "total_cost_usd": 0.000286,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true,
+      "modes": [
+        "describe",
+        "ocr"
+      ]
+    },
+    "meeting": {
+      "group": "multimodal",
+      "n": 1,
+      "n_blocked": 0,
+      "p50_ratio": 1,
+      "ratios": [
+        1
+      ],
+      "total_cost_usd": 0.00072,
+      "provider": "groq-whisper-v3-turbo+gemini-2.5-flash-lite",
+      "ran_for_real": true
+    },
+    "video": {
+      "group": "multimodal",
+      "n": 1,
+      "n_blocked": 0,
+      "p50_ratio": 5.107,
+      "ratios": [
+        5.107
+      ],
+      "total_cost_usd": 0.00059,
+      "provider": "gemini-2.5-flash-lite",
+      "ran_for_real": true
+    }
+  },
+  "grand_total": {
+    "total_cost_usd": 0.0266,
+    "budget_usd": 2,
+    "under_budget": true,
+    "total_tokens_processed": 216489,
+    "token_cap": 10000000,
+    "under_token_cap": true,
+    "capsules_run": 10,
+    "capsules_blocked": 0
+  },
+  "telemetry_fired": true
+}

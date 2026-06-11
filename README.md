@@ -137,7 +137,7 @@ Bucket runs add `size_bucket`; weighted runs add `weight_pct`; LLM runs add `N` 
 | `benchmark-nuxs-en.docx` | Full technical report (English) |
 | `manifesto-nuxs-en.docx` | Companion manifesto (English) |
 
-### Current study (626.8M cumulative, 91.62% weighted margin)
+### Current consolidated study (626.8M cumulative, 91.62% weighted margin)
 
 | File | Content |
 |---|---|
@@ -145,6 +145,34 @@ Bucket runs add `size_bucket`; weighted runs add `weight_pct`; LLM runs add `N` 
 | `benchmark-200m-summary.json` | Current run summary (200M, v0.5.33) |
 | `benchmark-200m-harness.mjs` | Current run harness (reproducible) |
 | `benchmark-200m-run.log` | Current run execution log |
+
+### Raw data feeding the cumulative 626.8M (JSONL — one sample per line)
+
+| File | Content | Samples |
+|---|---|---:|
+| `benchmark-raw.jsonl` | 1st round — synthetic | 328 |
+| `benchmark-large-raw.jsonl` | Large run — synthetic, XS→XXL buckets | 400 |
+| `benchmark-rag-raw.jsonl` | RAG/LLM profile — synthetic | 980 |
+| `benchmark-r2-raw.jsonl` | Round 2 — synthetic | 707 |
+| `benchmark-paid-raw.jsonl` | Backend run (includes multimodal) | 18 |
+| `benchmark-20-raw.jsonl` | Round 20 — XL/XXL samples | 30 |
+| `benchmark-code-raw.jsonl` | Programmer profile — synthetic | 71 |
+| `benchmark-codereal-raw.jsonl` | Real code — full corpus | 7,035 |
+| `benchmark-buildindex40-raw.jsonl` | Typical production hook — deterministic top-40 real | 40 |
+
+### Aggregate summaries (JSON)
+
+| File | Content |
+|---|---|
+| `benchmark-summary.json` | 1st round aggregate |
+| `benchmark-large-summary.json` | Per-bucket and per-capsule aggregates |
+| `benchmark-rag-summary.json` | Weighted RAG/LLM profile aggregate |
+| `benchmark-r2-summary.json` | Round 2 aggregate |
+| `benchmark-paid-summary.json` | Backend run aggregate (includes multimodal) |
+| `benchmark-20-summary.json` | Round 20 aggregate |
+| `benchmark-code-summary.json` | Programmer profile aggregate |
+| `benchmark-codereal-summary.json` | Real code corpus aggregate |
+| `benchmark-buildindex40-summary.json` | Typical hook run, with declared sampling criterion |
 
 ---
 

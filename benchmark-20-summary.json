@@ -1,0 +1,384 @@
+{
+  "generated_at": "2026-06-02T04:55:07.057Z",
+  "tokenizer": "cl100k_base (gpt-tokenizer)",
+  "capsules": {
+    "log": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 123.94,
+      "p50_ratio": 185.53,
+      "p90_ratio": 247.12,
+      "total_in_tokens": 1000231,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 300109,
+          "out_tokens": 2765,
+          "ratio": 108.5385,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 700122,
+          "out_tokens": 2667,
+          "ratio": 262.5129,
+          "passthrough": false
+        }
+      ]
+    },
+    "api": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 631.33,
+      "p50_ratio": 928.43,
+      "p90_ratio": 1225.53,
+      "total_in_tokens": 1014963,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 305269,
+          "out_tokens": 548,
+          "ratio": 557.0602,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 709694,
+          "out_tokens": 546,
+          "ratio": 1299.8059,
+          "passthrough": false
+        }
+      ]
+    },
+    "network": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 206.67,
+      "p50_ratio": 299.63,
+      "p90_ratio": 392.6,
+      "total_in_tokens": 881560,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 264874,
+          "out_tokens": 1444,
+          "ratio": 183.4307,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 616686,
+          "out_tokens": 1483,
+          "ratio": 415.8368,
+          "passthrough": false
+        }
+      ]
+    },
+    "diff": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 3.16,
+      "p50_ratio": 3.23,
+      "p90_ratio": 3.3,
+      "total_in_tokens": 1396187,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 413967,
+          "out_tokens": 131717,
+          "ratio": 3.1429,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 982220,
+          "out_tokens": 296396,
+          "ratio": 3.3139,
+          "passthrough": false
+        }
+      ]
+    },
+    "test": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 8.09,
+      "p50_ratio": 8.34,
+      "p90_ratio": 8.59,
+      "total_in_tokens": 924866,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 276867,
+          "out_tokens": 34493,
+          "ratio": 8.0268,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 647999,
+          "out_tokens": 74870,
+          "ratio": 8.655,
+          "passthrough": false
+        }
+      ]
+    },
+    "build": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 148.77,
+      "p50_ratio": 220.94,
+      "p90_ratio": 293.1,
+      "total_in_tokens": 1000094,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 300026,
+          "out_tokens": 2295,
+          "ratio": 130.7303,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 700068,
+          "out_tokens": 2250,
+          "ratio": 311.1413,
+          "passthrough": false
+        }
+      ]
+    },
+    "schema": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 1.72,
+      "p50_ratio": 1.73,
+      "p90_ratio": 1.74,
+      "total_in_tokens": 993354,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 296909,
+          "out_tokens": 172537,
+          "ratio": 1.7208,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 696445,
+          "out_tokens": 400821,
+          "ratio": 1.7375,
+          "passthrough": false
+        }
+      ]
+    },
+    "apispec": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 7.12,
+      "p50_ratio": 7.13,
+      "p90_ratio": 7.13,
+      "total_in_tokens": 594750,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 178661,
+          "out_tokens": 25087,
+          "ratio": 7.1217,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 416089,
+          "out_tokens": 58306,
+          "ratio": 7.1363,
+          "passthrough": false
+        }
+      ]
+    },
+    "prompt": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 1137.21,
+      "p50_ratio": 1684.3,
+      "p90_ratio": 2231.39,
+      "total_in_tokens": 1002107,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 301131,
+          "out_tokens": 301,
+          "ratio": 1000.4352,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 700976,
+          "out_tokens": 296,
+          "ratio": 2368.1622,
+          "passthrough": false
+        }
+      ]
+    },
+    "codebase": {
+      "group": "A",
+      "n": 2,
+      "p10_ratio": 3.16,
+      "p50_ratio": 3.17,
+      "p90_ratio": 3.17,
+      "total_in_tokens": 1129662,
+      "total_cost_usd": 0,
+      "ran_for_real": true,
+      "samples": [
+        {
+          "bucket": "XL",
+          "in_tokens": 339289,
+          "out_tokens": 106863,
+          "ratio": 3.175,
+          "passthrough": false
+        },
+        {
+          "bucket": "XXL",
+          "in_tokens": 790373,
+          "out_tokens": 249948,
+          "ratio": 3.1621,
+          "passthrough": false
+        }
+      ]
+    },
+    "stack": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "sql": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "events": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "session": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "threads": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "pdf": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "rag": {
+      "group": "B",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "local license is FREE; backend /api/capsule/compress returns HTTP 402 llm_paid_only — paid capsules need a paid license"
+    },
+    "video": {
+      "group": "B-multimodal",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "capsule type does NOT exist in this codebase (not in CapsuleType enum, no src/tools or dist implementation)"
+    },
+    "image": {
+      "group": "B-multimodal",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "capsule type does NOT exist in this codebase (not in CapsuleType enum, no src/tools or dist implementation)"
+    },
+    "meeting": {
+      "group": "B-multimodal",
+      "n": 0,
+      "p10_ratio": null,
+      "p50_ratio": null,
+      "p90_ratio": null,
+      "total_in_tokens": 0,
+      "total_cost_usd": 0,
+      "ran_for_real": false,
+      "blocked_reason": "capsule type does NOT exist in this codebase (not in CapsuleType enum, no src/tools or dist implementation)"
+    }
+  },
+  "grand_total": {
+    "total_input_tokens": 9937774,
+    "total_cost_usd": 0,
+    "capsules_run": 10,
+    "capsules_blocked": 10,
+    "tokenizer": "cl100k_base (gpt-tokenizer)",
+    "wall_time_s": 842.7
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "tokenizer": "cl100k_base",
+  "source": "REAL inputs",
+  "total_input_tokens": 12928017,
+  "total_output_tokens": 2629275,
+  "overall_pct_saved": 79.662,
+  "per_capsule": {
+    "codebase": {
+      "n": 6050,
+      "in": 4429031,
+      "out": 965420,
+      "pct_saved": 78.202,
+      "ratio": 4.59
+    },
+    "diff": {
+      "n": 385,
+      "in": 8005640,
+      "out": 1652802,
+      "pct_saved": 79.355,
+      "ratio": 4.84
+    },
+    "schema": {
+      "n": 600,
+      "in": 493346,
+      "out": 11053,
+      "pct_saved": 97.76,
+      "ratio": 44.63
+    }
+  }
+}

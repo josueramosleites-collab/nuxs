@@ -1,0 +1,329 @@
+{
+  "tokenizer": "cl100k_base",
+  "deterministic_free": true,
+  "llm_sampled_with_variance": true,
+  "per_capsule": {
+    "prompt": {
+      "paid": false,
+      "improved": false,
+      "n": 5,
+      "p50_ratio": 3345.85,
+      "p50_pct_saved": 99.97,
+      "total_in_tokens": 5001407,
+      "total_out_tokens": 1493,
+      "total_cost_usd": 0,
+      "weight_pct": 12,
+      "weighted_target_tokens": 4200000
+    },
+    "api": {
+      "paid": false,
+      "improved": false,
+      "n": 4,
+      "p50_ratio": 1822.33,
+      "p50_pct_saved": 99.94,
+      "total_in_tokens": 4005237,
+      "total_out_tokens": 2198,
+      "total_cost_usd": 0,
+      "weight_pct": 10,
+      "weighted_target_tokens": 3500000
+    },
+    "log": {
+      "paid": false,
+      "improved": false,
+      "n": 7,
+      "p50_ratio": 298.76,
+      "p50_pct_saved": 99.67,
+      "total_in_tokens": 5600620,
+      "total_out_tokens": 18805,
+      "total_cost_usd": 0,
+      "weight_pct": 16,
+      "weighted_target_tokens": 5600000
+    },
+    "test": {
+      "paid": false,
+      "improved": false,
+      "n": 1,
+      "p50_ratio": 8.34,
+      "p50_pct_saved": 88,
+      "total_in_tokens": 501094,
+      "total_out_tokens": 60109,
+      "total_cost_usd": 0,
+      "weight_pct": 1,
+      "weighted_target_tokens": 350000
+    },
+    "build": {
+      "paid": false,
+      "improved": false,
+      "n": 2,
+      "p50_ratio": 221.4,
+      "p50_pct_saved": 99.55,
+      "total_in_tokens": 1000048,
+      "total_out_tokens": 4517,
+      "total_cost_usd": 0,
+      "weight_pct": 1.5,
+      "weighted_target_tokens": 525000
+    },
+    "codebase": {
+      "paid": false,
+      "improved": true,
+      "n": 1,
+      "p50_ratio": 4.46,
+      "p50_pct_saved": 77.56,
+      "total_in_tokens": 585753,
+      "total_out_tokens": 131415,
+      "total_cost_usd": 0,
+      "weight_pct": 1,
+      "weighted_target_tokens": 350000
+    },
+    "network": {
+      "paid": false,
+      "improved": false,
+      "n": 2,
+      "p50_ratio": 172.71,
+      "p50_pct_saved": 99.42,
+      "total_in_tokens": 507084,
+      "total_out_tokens": 2936,
+      "total_cost_usd": 0,
+      "weight_pct": 1,
+      "weighted_target_tokens": 350000
+    },
+    "diff": {
+      "paid": false,
+      "improved": false,
+      "n": 1,
+      "p50_ratio": 3.24,
+      "p50_pct_saved": 69.17,
+      "total_in_tokens": 360698,
+      "total_out_tokens": 111199,
+      "total_cost_usd": 0,
+      "weight_pct": 0.5,
+      "weighted_target_tokens": 175000
+    },
+    "schema": {
+      "paid": false,
+      "improved": true,
+      "n": 1,
+      "p50_ratio": 1.82,
+      "p50_pct_saved": 45.06,
+      "total_in_tokens": 250642,
+      "total_out_tokens": 137701,
+      "total_cost_usd": 0,
+      "weight_pct": 0.5,
+      "weighted_target_tokens": 175000
+    },
+    "apispec": {
+      "paid": false,
+      "improved": false,
+      "n": 2,
+      "p50_ratio": 7.12,
+      "p50_pct_saved": 85.97,
+      "total_in_tokens": 250624,
+      "total_out_tokens": 35176,
+      "total_cost_usd": 0,
+      "weight_pct": 0.5,
+      "weighted_target_tokens": 175000
+    },
+    "rag": {
+      "paid": true,
+      "improved": false,
+      "n": 376,
+      "p50_ratio": 22.1,
+      "p50_pct_saved": 95.47,
+      "total_in_tokens": 5434190,
+      "total_out_tokens": 245017,
+      "total_cost_usd": 0.725293,
+      "weight_pct": 20,
+      "weighted_target_tokens": 7000000
+    },
+    "session": {
+      "paid": true,
+      "improved": false,
+      "n": 153,
+      "p50_ratio": 52.55,
+      "p50_pct_saved": 98.1,
+      "total_in_tokens": 2181565,
+      "total_out_tokens": 43104,
+      "total_cost_usd": 0.260549,
+      "weight_pct": 8,
+      "weighted_target_tokens": 2800000
+    },
+    "events": {
+      "paid": true,
+      "improved": false,
+      "n": 59,
+      "p50_ratio": 70.54,
+      "p50_pct_saved": 98.58,
+      "total_in_tokens": 1634296,
+      "total_out_tokens": 23770,
+      "total_cost_usd": 0.196494,
+      "weight_pct": 6,
+      "weighted_target_tokens": 2100000
+    },
+    "threads": {
+      "paid": true,
+      "improved": false,
+      "n": 116,
+      "p50_ratio": 85.68,
+      "p50_pct_saved": 98.83,
+      "total_in_tokens": 1906452,
+      "total_out_tokens": 22418,
+      "total_cost_usd": 0.221172,
+      "weight_pct": 7,
+      "weighted_target_tokens": 2450000
+    },
+    "pdf": {
+      "paid": true,
+      "improved": false,
+      "n": 134,
+      "p50_ratio": 2.69,
+      "p50_pct_saved": 62.9,
+      "total_in_tokens": 1631856,
+      "total_out_tokens": 619305,
+      "total_cost_usd": 0.488931,
+      "weight_pct": 6,
+      "weighted_target_tokens": 2100000
+    },
+    "stack": {
+      "paid": true,
+      "improved": false,
+      "n": 53,
+      "p50_ratio": 60.09,
+      "p50_pct_saved": 98.34,
+      "total_in_tokens": 1089685,
+      "total_out_tokens": 18788,
+      "total_cost_usd": 0.133211,
+      "weight_pct": 4,
+      "weighted_target_tokens": 1400000
+    },
+    "sql": {
+      "paid": true,
+      "improved": false,
+      "n": 63,
+      "p50_ratio": 26.67,
+      "p50_pct_saved": 96.25,
+      "total_in_tokens": 1361247,
+      "total_out_tokens": 49976,
+      "total_cost_usd": 0.175828,
+      "weight_pct": 5,
+      "weighted_target_tokens": 1750000
+    }
+  },
+  "grand_total": {
+    "total_input_tokens": 33302498,
+    "total_output_tokens": 1527927,
+    "total_cost_usd": 2.201449,
+    "budget_usd": 2.2,
+    "token_cap": 35000000,
+    "tokenizer": "cl100k_base",
+    "hit_budget_stop": true,
+    "hit_token_cap": false
+  },
+  "persona_b_weighted_pct": 95.38,
+  "persona_b_weighted_breakdown": {
+    "prompt": {
+      "weight": 12,
+      "pct_saved": 99.97,
+      "included": true
+    },
+    "api": {
+      "weight": 10,
+      "pct_saved": 99.94,
+      "included": true
+    },
+    "log": {
+      "weight": 16,
+      "pct_saved": 99.67,
+      "included": true
+    },
+    "test": {
+      "weight": 1,
+      "pct_saved": 88,
+      "included": true
+    },
+    "build": {
+      "weight": 1.5,
+      "pct_saved": 99.55,
+      "included": true
+    },
+    "codebase": {
+      "weight": 1,
+      "pct_saved": 77.56,
+      "included": true
+    },
+    "network": {
+      "weight": 1,
+      "pct_saved": 99.42,
+      "included": true
+    },
+    "diff": {
+      "weight": 0.5,
+      "pct_saved": 69.17,
+      "included": true
+    },
+    "schema": {
+      "weight": 0.5,
+      "pct_saved": 45.06,
+      "included": true
+    },
+    "apispec": {
+      "weight": 0.5,
+      "pct_saved": 85.97,
+      "included": true
+    },
+    "rag": {
+      "weight": 20,
+      "pct_saved": 95.47,
+      "included": true
+    },
+    "session": {
+      "weight": 8,
+      "pct_saved": 98.1,
+      "included": true
+    },
+    "events": {
+      "weight": 6,
+      "pct_saved": 98.58,
+      "included": true
+    },
+    "threads": {
+      "weight": 7,
+      "pct_saved": 98.83,
+      "included": true
+    },
+    "pdf": {
+      "weight": 6,
+      "pct_saved": 62.9,
+      "included": true
+    },
+    "stack": {
+      "weight": 4,
+      "pct_saved": 98.34,
+      "included": true
+    },
+    "sql": {
+      "weight": 5,
+      "pct_saved": 96.25,
+      "included": true
+    }
+  },
+  "persona_b_weights": {
+    "rag": 20,
+    "log": 16,
+    "prompt": 12,
+    "api": 10,
+    "session": 8,
+    "threads": 7,
+    "events": 6,
+    "pdf": 6,
+    "sql": 5,
+    "stack": 4,
+    "build": 1.5,
+    "test": 1,
+    "codebase": 1,
+    "diff": 0.5,
+    "schema": 0.5,
+    "network": 1,
+    "apispec": 0.5
+  },
+  "elapsed_sec": 4782.1
+}
