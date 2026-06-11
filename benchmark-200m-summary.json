@@ -1,0 +1,397 @@
+{
+ "meta": {
+  "version": "0.5.33",
+  "date": "2026-06-10T21:11:07.040Z",
+  "method": "gigantes selvagens + mutação dígito-a-dígito; single-pass = nº honesto; LLM via proxy real"
+ },
+ "profiles": {
+  "text": {
+   "rag": {
+    "cls": "llm",
+    "target": 20000000,
+    "in": 20010072,
+    "out": 1917000,
+    "samples": 1704,
+    "errors": 0,
+    "margin_volume": 90.4,
+    "margin_singlepass": 90.4,
+    "ms": 547803
+   },
+   "log": {
+    "cls": "algo",
+    "target": 16000000,
+    "in": 16063645,
+    "out": 200320,
+    "samples": 95,
+    "errors": 0,
+    "margin_volume": 98.8,
+    "margin_singlepass": 98.8,
+    "ms": 4630
+   },
+   "pdf": {
+    "cls": "llm",
+    "target": 12000000,
+    "in": 12023183,
+    "out": 484007,
+    "samples": 401,
+    "errors": 0,
+    "margin_volume": 96,
+    "margin_singlepass": 96,
+    "caveat": "pdf 120KB texto técnico real"
+   },
+   "threads": {
+    "cls": "llm",
+    "target": 10000000,
+    "in": 10001241,
+    "out": 837003,
+    "samples": 601,
+    "errors": 0,
+    "margin_volume": 91.6,
+    "margin_singlepass": 91.9,
+    "ms": 303056
+   },
+   "events": {
+    "cls": "llm",
+    "target": 9000000,
+    "in": 9070336,
+    "out": 44089,
+    "samples": 88,
+    "errors": 0,
+    "margin_volume": 99.5,
+    "margin_singlepass": 99.6,
+    "ms": 41684
+   },
+   "prompt": {
+    "cls": "algo",
+    "target": 8000000,
+    "in": 8012934,
+    "out": 13532,
+    "samples": 398,
+    "errors": 0,
+    "margin_volume": 99.8,
+    "margin_singlepass": 99.8,
+    "ms": 1248
+   },
+   "api": {
+    "cls": "algo",
+    "target": 7000000,
+    "in": 7195617,
+    "out": 234,
+    "samples": 9,
+    "errors": 0,
+    "margin_volume": 100,
+    "margin_singlepass": 100,
+    "ms": 32682
+   },
+   "sql": {
+    "cls": "llm",
+    "target": 5000000,
+    "in": 5010920,
+    "out": 40654,
+    "samples": 34,
+    "errors": 0,
+    "margin_volume": 99.2,
+    "margin_singlepass": 99.2,
+    "ms": 18632
+   },
+   "network": {
+    "cls": "algo",
+    "target": 3000000,
+    "in": 3563305,
+    "out": 738,
+    "samples": 5,
+    "errors": 0,
+    "margin_volume": 100,
+    "margin_singlepass": 99.9,
+    "ms": 728
+   },
+   "stack": {
+    "cls": "llm",
+    "target": 2000000,
+    "in": 2004372,
+    "out": 190459,
+    "samples": 277,
+    "errors": 0,
+    "margin_volume": 90.5,
+    "margin_singlepass": 90.7,
+    "ms": 75370
+   },
+   "schema": {
+    "cls": "algo",
+    "target": 2000000,
+    "in": 2000200,
+    "out": 459900,
+    "samples": 292,
+    "errors": 0,
+    "margin_volume": 77,
+    "margin_singlepass": 77,
+    "ms": 758
+   },
+   "codebase": {
+    "cls": "algo",
+    "target": 1500000,
+    "in": 1513733,
+    "out": 35762,
+    "samples": 53,
+    "errors": 0,
+    "margin_volume": 97.6,
+    "margin_singlepass": 99,
+    "ms": 364
+   },
+   "diff": {
+    "cls": "algo",
+    "target": 1500000,
+    "in": 1537461,
+    "out": 85026,
+    "samples": 37,
+    "errors": 0,
+    "margin_volume": 94.5,
+    "margin_singlepass": 94.5,
+    "ms": 322
+   },
+   "test": {
+    "cls": "algo",
+    "target": 1000000,
+    "in": 1013040,
+    "out": 27809,
+    "samples": 56,
+    "errors": 0,
+    "margin_volume": 97.3,
+    "margin_singlepass": 97.2,
+    "ms": 391
+   },
+   "build": {
+    "cls": "algo",
+    "target": 1000000,
+    "in": 1013132,
+    "out": 40190,
+    "samples": 68,
+    "errors": 0,
+    "margin_volume": 96,
+    "margin_singlepass": 96,
+    "ms": 304
+   },
+   "apispec": {
+    "cls": "algo",
+    "target": 700000,
+    "in": 708552,
+    "out": 94002,
+    "samples": 78,
+    "errors": 0,
+    "margin_volume": 86.7,
+    "margin_singlepass": 85.9,
+    "ms": 896
+   },
+   "image": {
+    "cls": "algo-img",
+    "target": 300000,
+    "in": 304934,
+    "out": 1840,
+    "samples": 46,
+    "errors": 0,
+    "margin_volume": 99.4,
+    "margin_singlepass": 99.4,
+    "caveat": "binário/metadata, estimado bytes→tok"
+   },
+   "_aggregate": {
+    "in": 101046677,
+    "out": 4472565,
+    "margin": 95.57
+   }
+  },
+  "code": {
+   "codebase": {
+    "cls": "algo",
+    "target": 17500000,
+    "in": 17507893,
+    "out": 417682,
+    "samples": 613,
+    "errors": 0,
+    "margin_volume": 97.6,
+    "margin_singlepass": 99,
+    "ms": 6056
+   },
+   "diff": {
+    "cls": "algo",
+    "target": 14000000,
+    "in": 14003361,
+    "out": 774426,
+    "samples": 337,
+    "errors": 0,
+    "margin_volume": 94.5,
+    "margin_singlepass": 94.5,
+    "ms": 2911
+   },
+   "log": {
+    "cls": "algo",
+    "target": 12000000,
+    "in": 12005461,
+    "out": 149679,
+    "samples": 71,
+    "errors": 0,
+    "margin_volume": 98.8,
+    "margin_singlepass": 98.8,
+    "ms": 4405
+   },
+   "stack": {
+    "cls": "llm",
+    "target": 10000000,
+    "in": 10000152,
+    "out": 954018,
+    "samples": 1382,
+    "errors": 0,
+    "margin_volume": 90.5,
+    "margin_singlepass": 90.7,
+    "ms": 357352
+   },
+   "build": {
+    "cls": "algo",
+    "target": 9000000,
+    "in": 9013895,
+    "out": 357279,
+    "samples": 605,
+    "errors": 0,
+    "margin_volume": 96,
+    "margin_singlepass": 96,
+    "ms": 2638
+   },
+   "test": {
+    "cls": "algo",
+    "target": 8000000,
+    "in": 8013870,
+    "out": 219934,
+    "samples": 443,
+    "errors": 0,
+    "margin_volume": 97.3,
+    "margin_singlepass": 97.2,
+    "ms": 3007
+   },
+   "api": {
+    "cls": "algo",
+    "target": 7000000,
+    "in": 7195617,
+    "out": 234,
+    "samples": 9,
+    "errors": 0,
+    "margin_volume": 100,
+    "margin_singlepass": 100,
+    "ms": 33764
+   },
+   "schema": {
+    "cls": "algo",
+    "target": 5000000,
+    "in": 5000500,
+    "out": 1149750,
+    "samples": 730,
+    "errors": 0,
+    "margin_volume": 77,
+    "margin_singlepass": 77,
+    "ms": 1891
+   },
+   "apispec": {
+    "cls": "algo",
+    "target": 4000000,
+    "in": 4006044,
+    "out": 533748,
+    "samples": 441,
+    "errors": 0,
+    "margin_volume": 86.7,
+    "margin_singlepass": 85.9,
+    "ms": 4745
+   },
+   "prompt": {
+    "cls": "algo",
+    "target": 4000000,
+    "in": 4006467,
+    "out": 6766,
+    "samples": 199,
+    "errors": 0,
+    "margin_volume": 99.8,
+    "margin_singlepass": 99.8,
+    "ms": 1480
+   },
+   "network": {
+    "cls": "algo",
+    "target": 3000000,
+    "in": 3563305,
+    "out": 738,
+    "samples": 5,
+    "errors": 0,
+    "margin_volume": 100,
+    "margin_singlepass": 99.9,
+    "ms": 756
+   },
+   "sql": {
+    "cls": "llm",
+    "target": 3000000,
+    "in": 3094980,
+    "out": 25845,
+    "samples": 21,
+    "errors": 0,
+    "margin_volume": 99.2,
+    "margin_singlepass": 99.2,
+    "ms": 15578
+   },
+   "rag": {
+    "cls": "llm",
+    "target": 1200000,
+    "in": 1209529,
+    "out": 112064,
+    "samples": 103,
+    "errors": 0,
+    "margin_volume": 90.7,
+    "margin_singlepass": 90.7,
+    "ms": 39223
+   },
+   "events": {
+    "cls": "llm",
+    "target": 800000,
+    "in": 824576,
+    "out": 4300,
+    "samples": 8,
+    "errors": 0,
+    "margin_volume": 99.5,
+    "margin_singlepass": 99.5,
+    "ms": 9811
+   },
+   "threads": {
+    "cls": "llm",
+    "target": 500000,
+    "in": 515871,
+    "out": 41554,
+    "samples": 31,
+    "errors": 0,
+    "margin_volume": 91.9,
+    "margin_singlepass": 92.2,
+    "ms": 77804
+   },
+   "pdf": {
+    "cls": "llm",
+    "target": 500000,
+    "in": 509711,
+    "out": 20655,
+    "samples": 17,
+    "errors": 0,
+    "margin_volume": 95.9,
+    "margin_singlepass": 95.9,
+    "caveat": "pdf 120KB texto técnico real"
+   },
+   "image": {
+    "cls": "algo-img",
+    "target": 500000,
+    "in": 503804,
+    "out": 3040,
+    "samples": 76,
+    "errors": 0,
+    "margin_volume": 99.4,
+    "margin_singlepass": 99.4,
+    "caveat": "binário/metadata, estimado bytes→tok"
+   },
+   "_aggregate": {
+    "in": 100975036,
+    "out": 4771712,
+    "margin": 95.27
+   }
+  }
+ }
+}

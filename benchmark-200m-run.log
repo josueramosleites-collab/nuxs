@@ -1,0 +1,39 @@
+[2026-06-10T21:11:07.042Z] ==== PERFIL TEXT (100M alvo) ====
+[2026-06-10T21:20:14.849Z] rag       [llm] 20.0M tok, 1704 amostras → volume 90.4% | single-pass 90.4% | err 0 (548s)
+[2026-06-10T21:20:19.484Z] log       [algo] 16.1M tok, 95 amostras → volume 98.8% | single-pass 98.8% | err 0 (5s)
+[2026-06-10T21:20:22.642Z] pdf       [llm] pdf 96% (120KB real) 3156ms
+[2026-06-10T21:25:25.700Z] threads   [llm] 10.0M tok, 601 amostras → volume 91.6% | single-pass 91.9% | err 0 (303s)
+[2026-06-10T21:26:07.388Z] events    [llm] 9.1M tok, 88 amostras → volume 99.5% | single-pass 99.6% | err 0 (42s)
+[2026-06-10T21:26:08.641Z] prompt    [algo] 8.0M tok, 398 amostras → volume 99.8% | single-pass 99.8% | err 0 (1s)
+[2026-06-10T21:26:41.331Z] api       [algo] 7.2M tok, 9 amostras → volume 100% | single-pass 100% | err 0 (33s)
+[2026-06-10T21:26:59.967Z] sql       [llm] 5.0M tok, 34 amostras → volume 99.2% | single-pass 99.2% | err 0 (19s)
+[2026-06-10T21:27:00.701Z] network   [algo] 3.6M tok, 5 amostras → volume 100% | single-pass 99.9% | err 0 (1s)
+[2026-06-10T21:28:16.072Z] stack     [llm] 2.0M tok, 277 amostras → volume 90.5% | single-pass 90.7% | err 0 (75s)
+[2026-06-10T21:28:16.833Z] schema    [algo] 2.0M tok, 292 amostras → volume 77% | single-pass 77% | err 0 (1s)
+[2026-06-10T21:28:17.200Z] codebase  [algo] 1.5M tok, 53 amostras → volume 97.6% | single-pass 99% | err 0 (0s)
+[2026-06-10T21:28:17.526Z] diff      [algo] 1.5M tok, 37 amostras → volume 94.5% | single-pass 94.5% | err 0 (0s)
+[2026-06-10T21:28:17.920Z] test      [algo] 1.0M tok, 56 amostras → volume 97.3% | single-pass 97.2% | err 0 (0s)
+[2026-06-10T21:28:18.226Z] build     [algo] 1.0M tok, 68 amostras → volume 96% | single-pass 96% | err 0 (0s)
+[2026-06-10T21:28:19.124Z] apispec   [algo] 0.7M tok, 78 amostras → volume 86.7% | single-pass 85.9% | err 0 (1s)
+[2026-06-10T21:28:19.125Z] image     [algo-img] 0.3M est → 99.4% (metadata, estimado)
+[2026-06-10T21:28:19.125Z] ==== PERFIL CODE (100M alvo) ====
+[2026-06-10T21:28:25.181Z] codebase  [algo] 17.5M tok, 613 amostras → volume 97.6% | single-pass 99% | err 0 (6s)
+[2026-06-10T21:28:28.094Z] diff      [algo] 14.0M tok, 337 amostras → volume 94.5% | single-pass 94.5% | err 0 (3s)
+[2026-06-10T21:28:32.501Z] log       [algo] 12.0M tok, 71 amostras → volume 98.8% | single-pass 98.8% | err 0 (4s)
+[2026-06-10T21:34:29.855Z] stack     [llm] 10.0M tok, 1382 amostras → volume 90.5% | single-pass 90.7% | err 0 (357s)
+[2026-06-10T21:34:32.497Z] build     [algo] 9.0M tok, 605 amostras → volume 96% | single-pass 96% | err 0 (3s)
+[2026-06-10T21:34:35.506Z] test      [algo] 8.0M tok, 443 amostras → volume 97.3% | single-pass 97.2% | err 0 (3s)
+[2026-06-10T21:35:09.277Z] api       [algo] 7.2M tok, 9 amostras → volume 100% | single-pass 100% | err 0 (34s)
+[2026-06-10T21:35:11.170Z] schema    [algo] 5.0M tok, 730 amostras → volume 77% | single-pass 77% | err 0 (2s)
+[2026-06-10T21:35:15.916Z] apispec   [algo] 4.0M tok, 441 amostras → volume 86.7% | single-pass 85.9% | err 0 (5s)
+[2026-06-10T21:35:17.399Z] prompt    [algo] 4.0M tok, 199 amostras → volume 99.8% | single-pass 99.8% | err 0 (1s)
+[2026-06-10T21:35:18.160Z] network   [algo] 3.6M tok, 5 amostras → volume 100% | single-pass 99.9% | err 0 (1s)
+[2026-06-10T21:35:33.741Z] sql       [llm] 3.1M tok, 21 amostras → volume 99.2% | single-pass 99.2% | err 0 (16s)
+[2026-06-10T21:36:12.967Z] rag       [llm] 1.2M tok, 103 amostras → volume 90.7% | single-pass 90.7% | err 0 (39s)
+[2026-06-10T21:36:22.782Z] events    [llm] 0.8M tok, 8 amostras → volume 99.5% | single-pass 99.5% | err 0 (10s)
+[2026-06-10T21:37:40.588Z] threads   [llm] 0.5M tok, 31 amostras → volume 91.9% | single-pass 92.2% | err 0 (78s)
+[2026-06-10T21:37:58.287Z] pdf       [llm] pdf 95.9% (120KB real) 17697ms
+[2026-06-10T21:37:58.289Z] image     [algo-img] 0.5M est → 99.4% (metadata, estimado)
+[2026-06-10T21:37:58.289Z] PERFIL text: 101.0M processados, margem agregada 95.57%
+[2026-06-10T21:37:58.289Z] PERFIL code: 101.0M processados, margem agregada 95.27%
+[2026-06-10T21:37:58.290Z] BENCHMARK 100M COMPLETO

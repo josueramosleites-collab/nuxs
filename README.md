@@ -21,8 +21,8 @@ npm install -g nuxs-capsule
 nuxs-capsule login
 ```
 
-> **87.46%** aggregate margin over **180,590,521 auditable tokens** · up to **99%** on log/api/build/RAG capsules · engine: `nuxs-capsule 0.1.57` · tokenizer: `cl100k_base`.
-> Every metric in this repo is recomputable from the published raw files.
+> **91.62%** weighted margin over **626,784,439 cumulative auditable tokens** · current run **95.42%** (200M, v0.5.33) · up to **99%** on log/api/build/RAG capsules · tokenizer: `cl100k_base`.
+> Every metric in this repo is recomputable from the published raw files. Full consolidated study: **[BENCHMARK-626M.md](BENCHMARK-626M.md)**.
 
 ---
 
@@ -76,14 +76,16 @@ Nothing here is a commitment to a specific date — these are the directions we'
 
 | Metric | Value |
 |---|---:|
-| Auditable volume | **180,590,521** tokens |
-| Auditable samples | **9,609** |
-| Tokens saved | **157,948,621** |
-| Aggregate margin (17 capsules) | **87.46%** |
-| Real-world margin — Programmer profile | **~92%** |
-| Real-world margin — RAG/LLM profile | **95.4%** |
-| Capsules with margin ≥ 95% (synthetic) | **11 of 17** |
-| Multimodal capabilities validated | **3** (image, video, meeting) |
+| Cumulative audited volume | **626,784,439** tokens |
+| Cumulative tokens saved | **574,252,194** |
+| Weighted margin (cumulative) | **91.62%** |
+| Current run (200M, v0.5.33) | **95.42%** · zero errors / 9,333 samples |
+| Profile — TEXT (RAG/log) | **95.57%** |
+| Profile — CODE (coding agent) | **95.27%** |
+| Taxonomy | **11 algorithmic + 6 LLM + 3 multimodal** |
+| Full consolidated study | **[BENCHMARK-626M.md](BENCHMARK-626M.md)** |
+
+_The per-capsule and per-run tables further down this README correspond to the archived Jun-5 study (180.3M, 87.45%) — the historical reference of the series. The current per-capsule breakdown is in [BENCHMARK-626M.md](BENCHMARK-626M.md)._
 
 All numbers measured with `cl100k_base` via the public `gpt-tokenizer` package.
 
@@ -149,6 +151,10 @@ Bucket runs add `size_bucket`; weighted runs add `weight_pct`; LLM runs add `N` 
 
 | File | Content | Samples |
 |---|---|---:|
+| `BENCHMARK-626M.md` | **Consolidated study (626.8M, 91.62%) — current** | 9,333 (run) |
+| `benchmark-200m-summary.json` | Current run summary (200M, v0.5.33) | — |
+| `benchmark-200m-harness.mjs` | Current run harness (reproducible) | — |
+| `benchmark-200m-run.log` | Current run execution log | — |
 | `benchmark-raw.jsonl` | 1st round — synthetic | 328 |
 | `benchmark-large-raw.jsonl` | Large run — synthetic, XS→XXL buckets | 400 |
 | `benchmark-rag-raw.jsonl` | RAG/LLM profile — synthetic | 980 |
