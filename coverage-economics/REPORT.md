@@ -18,11 +18,18 @@ and the **cost structure** study (where the bill actually lives)._
 
 ## 1. The three numbers of the study
 
-### 1.1 Margin (from the 200M REPORT — the most solid)
-**95.42%** of what is intercepted. 200M tokens audited, raw files preserved. Survives external audit.
+What the product can honestly claim — three numbers, not one:
 
-### 1.2 Coverage (measured, code profile)
-**~46% of the text tokens** the hook sees become a capsule (0.5.36 rule, replay of 1,621 reads).
+### 1.1 Engine margin — **91.62%**
+**626,784,439 tokens processed / 574,252,194 saved = 91.62%** weighted margin across the
+cumulative audited volume (five separate runs). Auditable, raw files preserved. This is
+the official benchmark number — see the `BENCHMARK-626M.md` document at the repository
+root. It is what the engine compresses **on the intercepted slice**.
+
+### 1.2 Coverage — **~46%** (code profile)
+**~46% of the text tokens** the hook sees become a capsule (0.5.36 rule, replay of 1,621
+reads over 90 real Claude Code sessions, n=1, code profile). Text/RAG profile is
+structurally better — that traffic IS capsulable data.
 - The other 54% raw are **by design**: first read of code files <80KB that will be edited
   (probability zone), tiny files (<2KB, negative EV), prose.
 - **Routing gap ≈ 0** (0.02M of 18M) — the Stage E content-sniffer in the router already
@@ -31,11 +38,23 @@ and the **cost structure** study (where the bill actually lives)._
   the faucet that the **type-agnostic dedup** addresses (separate internal design), the
   only algorithmic coverage lever still open.
 
-### 1.3 Real economy = margin × coverage
-**≈ 0.95 × 0.46 ≈ 40% of the input bill** cut on the code profile (the worst profile).
-It is **not** 95% (that is only on the intercepted slice). Text/RAG profiles are
-structurally better (their traffic IS capsulable data), but that number remains
-**modeled until a text client passes through the meter**.
+### 1.3 Real margin / Effective economy — **~42%**
+**0.9162 × 0.461 ≈ 0.422 — about 42% of the input bill** is cut on the code profile (the
+worst profile). It is **not** 91.62% (that is only on the intercepted slice). Plus the
+**compounding effect on cache**: every token compressed out of context saves every
+remaining turn of the session, and cache is **91% of the bill** (see §2). On a long
+session, the headline 42% understates the realized saving.
+
+### 1.4 Honesty note — two studies, two universes
+
+The 91.62% margin comes from the 626M benchmark (fixtures, audited runs). The 46%
+coverage comes from this study (replay over 90 real Claude Code sessions, code profile,
+n=1). They are **two different universes**: cross-multiplying them to claim a single
+"total = 1.36B" number would be an **extrapolation** (multiplying the engine margin by a
+coverage measured in production transcripts). What the product can affirm without
+extrapolation is **the three numbers separately, in the order above**: engine 91.62% on
+the intercepted slice, coverage ~46% on the code profile, effective economy ~42%
+modeled — until in-production meters return per-client coverage.
 
 ---
 

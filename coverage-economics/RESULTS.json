@@ -9,7 +9,10 @@
   "bill_share": { "cache_read": 0.68, "cache_write": 0.23, "output": 0.08, "fresh_input": 0.001 },
   "output_share_by_session_size": { "<100t": 0.22, "100-500t": 0.143, "500-2000t": 0.088, "2000+t": 0.079 },
   "cache_share_by_session_size": { "<100t": 0.777, "100-500t": 0.857, "500-2000t": 0.912, "2000+t": 0.92 },
-  "real_input_economy_code_profile": "margin(0.9542) x coverage(0.461) ~= 0.44 (44% of the input bill)",
+  "engine_margin_pct": 91.62,
+  "engine_margin_source": "626M cumulative audited run; see BENCHMARK-626M.md",
+  "real_margin_code_profile": "engine_margin(0.9162) x coverage(0.461) ~= 0.422 (about 42% of the input bill)",
+  "honesty_two_universes": "engine margin from fixtures (626M), coverage from replay (90 real sessions). Cross-multiplying for a single total is an extrapolation; report the three numbers separately."
   "conclusion": "cache dominates across all sizes; compression has a compounding effect (a token out of context saves every turn); executor router drops behind compression",
   "delivery": "free/plan = 11 algorithmic capsules 100% local (no proxy); proxy is an optional/paid delivery"
 }
