@@ -1,0 +1,37 @@
+{
+  "run": "2026-06-13-economy-routing",
+  "method": "per-task cost = M_input * price_input + M_output * price_output; list prices as of 2026-06-13; typical agent workload modeled as 8M input + 2M output (80/20)",
+  "task_size_M_tokens": 10,
+  "task_split": { "input_M": 8, "output_M": 2 },
+  "prices_usd_per_mtok": {
+    "claude_fable_5":         { "input": 10.00, "output": 50.00 },
+    "claude_opus_4_8":        { "input": 5.00,  "output": 25.00 },
+    "claude_sonnet_4_6":      { "input": 3.00,  "output": 15.00 },
+    "claude_haiku_4_5":       { "input": 1.00,  "output": 5.00 },
+    "deepseek_v4_flash":      { "input": 0.14,  "output": 0.28 }
+  },
+  "task_cost_usd": {
+    "claude_fable_5": 180.00,
+    "claude_opus_4_8": 90.00,
+    "claude_sonnet_4_6": 54.00,
+    "claude_haiku_4_5": 18.00,
+    "deepseek_v4_flash": 1.68
+  },
+  "multipliers_vs_fable_5": {
+    "input_only":  { "opus_4_8": 2.0,  "sonnet_4_6": 3.33, "haiku_4_5": 10.0, "deepseek_v4_flash": 71.4 },
+    "output_only": { "opus_4_8": 2.0,  "sonnet_4_6": 3.33, "haiku_4_5": 10.0, "deepseek_v4_flash": 178.6 },
+    "blended_80_20":{"opus_4_8": 2.0,  "sonnet_4_6": 3.33, "haiku_4_5": 10.0, "deepseek_v4_flash": 107.1 }
+  },
+  "multipliers_vs_opus_4_8": {
+    "input_only":  { "sonnet_4_6": 1.67, "haiku_4_5": 5.0, "deepseek_v4_flash": 35.7 },
+    "output_only": { "sonnet_4_6": 1.67, "haiku_4_5": 5.0, "deepseek_v4_flash": 89.3 },
+    "blended_80_20":{"sonnet_4_6": 1.67, "haiku_4_5": 5.0, "deepseek_v4_flash": 53.6 }
+  },
+  "honest_headline": "up to 179x cheaper on output, 107x on a typical agent task (DeepSeek V4-Flash vs Claude Fable 5)",
+  "axes_not_included": [
+    "prompt_caching_up_to_98pct_off_cached_input",
+    "deepseek_off_peak_50pct_off_16h30_to_00h30_utc",
+    "anthropic_batch_api_50pct_off"
+  ],
+  "scope_note": "Routing axis only. Separate from engine margin (91.62% on 626M benchmark) and coverage (~46% on code profile). The three axes are independent and only compose to a single client number through the in-product meter."
+}
