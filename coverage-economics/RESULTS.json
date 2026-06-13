@@ -1,0 +1,15 @@
+{
+  "run": "2026-06-11-coverage-economics",
+  "method": "replay over real Claude Code transcripts; parse message.usage per turn; Opus 4.x pricing",
+  "labels": ["n=1", "code-profile", "replay-not-production", "raw-transcripts-before-compression"],
+  "sessions": 90,
+  "assistant_turns": 30306,
+  "coverage_text_code_profile_pct": 46.1,
+  "routing_gap_M_tokens": 0.02,
+  "bill_share": { "cache_read": 0.68, "cache_write": 0.23, "output": 0.08, "fresh_input": 0.001 },
+  "output_share_by_session_size": { "<100t": 0.22, "100-500t": 0.143, "500-2000t": 0.088, "2000+t": 0.079 },
+  "cache_share_by_session_size": { "<100t": 0.777, "100-500t": 0.857, "500-2000t": 0.912, "2000+t": 0.92 },
+  "real_input_economy_code_profile": "margin(0.9542) x coverage(0.461) ~= 0.44 (44% of the input bill)",
+  "conclusion": "cache dominates across all sizes; compression has a compounding effect (a token out of context saves every turn); executor router drops behind compression",
+  "delivery": "free/plan = 11 algorithmic capsules 100% local (no proxy); proxy is an optional/paid delivery"
+}
