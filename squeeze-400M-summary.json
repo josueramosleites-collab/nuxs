@@ -1,0 +1,46 @@
+{
+ "benchmark": "Nuxs Squeeze — 400M",
+ "mode": "squeeze",
+ "capsule": false,
+ "tokenizer": "cl100k (gpt-tokenizer)",
+ "judge": "independent strong LLM judge (gate 1 or 6-10), 3 judges/sheet",
+ "profiles": {
+  "codigo": {
+   "items": 26,
+   "arena": {
+    "total_tokens": 200018026,
+    "intercepted": 166422481,
+    "saved": 165368804,
+    "coverage": 0.832,
+    "compression": 0.994,
+    "effective": 0.827
+   },
+   "quality_avg": 8.69,
+   "quality_min": 8,
+   "unrecoverable": 0
+  },
+  "escrito": {
+   "items": 20,
+   "arena": {
+    "total_tokens": 200002396,
+    "intercepted": 159699222,
+    "saved": 157948723,
+    "coverage": 0.798,
+    "compression": 0.989,
+    "effective": 0.79
+   },
+   "quality_avg": 8.42,
+   "quality_min": 7.33,
+   "unrecoverable": 0
+  }
+ },
+ "overall": {
+  "total_tokens": 400020422,
+  "saved": 323317527,
+  "coverage": 0.8153,
+  "compression": 0.9914,
+  "effective": 0.8083,
+  "quality_avg": 8.57,
+  "unrecoverable": 0
+ }
+}
