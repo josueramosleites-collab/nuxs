@@ -1,241 +1,162 @@
-<p align="center">
-  <img src="assets/nuxs-lockup-white.svg" alt="NUXS" width="220" />
-</p>
+# Nuxs — Official Compression Benchmark
 
-<h1 align="center">Cut up to 99% of intercepted tokens.<br/>Free.</h1>
+> **Over 1 billion tokens audited.** Every number here is reproducible from the raw artifacts in
+> [`raws/`](./raws) — see [`HOW-TO-VERIFY.md`](./HOW-TO-VERIFY.md). Every dollar figure is a **real billing
+> delta**, not an estimate.
 
-<p align="center">
-  <strong>NUXS is universal context compression for AI agents.</strong><br/>
-  Compresses HARs, huge JSONs, slow query logs, codebases, RAG chunks — <em>before</em> the agent reads them.<br/>
-  Provider-agnostic: Claude, Cursor, Codex, Cline, Aider, any MCP-compatible agent.
-</p>
-
-<p align="center">
-  <a href="https://nuxs.ai/playground"><strong>🟢 Try it in the browser (free, no signup)</strong></a> ·
-  <a href="https://nuxs.ai/download"><strong>⬇️ Install the CLI (free beta)</strong></a> ·
-  <a href="https://nuxs.ai/benchmark">📊 Benchmark UI</a>
-</p>
-
-**Get a free license at [nuxs.ai/register](https://nuxs.ai/register?next=/painel)** — the panel hands you a one-click installer (macOS · Windows · Linux) and your license. The free tier is metered (50M tokens lifetime · 3 devices), so the install is tied to an account from day one.
-
-> **1,026,804,861 cumulative auditable tokens** (capsules 626.8M · Squeeze 400M) · capsules **91.62%** margin · Squeeze **80.8% effective** · Economy **up to 179× on output** · real billing reconciled to the provider's own ledger · tokenizer: `cl100k_base`.
-> Every metric in this repo is recomputable from the published raw files. **Full June 2026 study: [NUXS-Benchmark-June-2026.md](NUXS-Benchmark-June-2026.md)** · previous (capsules-only): [BENCHMARK-626M.md](BENCHMARK-626M.md).
+Nuxs cuts the cost of running LLM agents with three complementary, stackable modes. This benchmark reports
+each one with audited numbers and reproducible raws.
 
 ---
 
-## Try it before reading anything else
+## Headline
 
-The fastest way to understand NUXS is to feed it your own context and watch the compression happen.
-
-- **Playground** — paste a HAR, a JSON payload, a slow query log, a code dump or pick one of the sample fixtures: **[nuxs.ai/playground](https://nuxs.ai/playground)**
-- **Benchmark UI** — explore the report inline with sortable tables: **[nuxs.ai/benchmark](https://nuxs.ai/benchmark)**
-- **Install the CLI** — sign up for a free license, the panel hands you a one-click installer wired into Claude Code, Cursor, Cline or any MCP-compatible agent: **[nuxs.ai/register](https://nuxs.ai/register?next=/painel)**
-
----
-
-## What is NUXS
-
-NUXS is a context compression layer that sits between an AI agent and the model. It reduces the input — conversation history, logs, schemas, diffs, code, search results, and other agent context — before it reaches the model, returning a smaller, denser, cheaper input. NUXS is provider-agnostic and works with Claude, Cursor, Codex, Cline, Aider, or any integration via SDK or proxy, using your own key.
-
-The product is organized into **17 text capsules** — **11 algorithmic** (log, api, network, schema, codebase, diff, test, build, apispec, prompt, image) and **6 LLM-based** (rag, sql, stack, threads, events, pdf) — plus **3 multimodal capabilities** (image-LLM, video, meeting) that translate media into dense textual context.
+| | |
+|---|---|
+| **Total tokens audited** | **1,026,804,861** (1.026 billion) |
+| **Modes measured** | Capsule · Squeeze · Economy |
+| **Largest single run** | 400,020,422 tokens (Squeeze), fully reproducible from `raws/` |
+| **Real billed savings** | proven against the provider's own ledger (down to the cent) |
+| **Engine** | `nuxs-capsule@0.5.73` (npm) · tokenizer **cl100k** (`gpt-tokenizer`) · model **Opus 4.8** · 2026-06-18→20 |
 
 ---
 
-## How it works (pricing & access)
+## The three modes
 
-NUXS is in **open beta** and the CLI is **free to install and use** while we validate with early users. Concretely:
+| Mode | What it gives you | Measured result |
+|---|---|---|
+| **Capsule** | Dense, type-aware compression of tool output | aggregate margin **87–95%** per run (peaks ~99.8%) |
+| **Squeeze** | Removes cold/superseded context, leaving a cheap re-fetchable reference | **79–81% effective** input reduction |
+| **Economy** | Routes batch/mechanical work to a cheaper model | **99.4% cheaper output (up to ~179×)** on eligible work |
 
-- **Free playground** (`nuxs.ai/playground`) — algorithmic capsules run in-browser. No signup needed. Soft cap per IP to keep it open to everyone.
-- **Free CLI beta** — get a free license at **[nuxs.ai/register](https://nuxs.ai/register?next=/painel)**, the panel hands you the installer (macOS · Windows · Linux). The hook wires itself into every MCP-compatible agent on the device. Current cap: **50M tokens lifetime · 3 devices**. No card required.
-- **Paid tiers** (Solo / Team / Enterprise) lift the monthly cap, raise the device limit, and unlock the LLM-based capsules and multimodal capabilities at scale. Details on `nuxs.ai`.
-
-The 11 algorithmic capsules are deterministic and run entirely on-device. The 6 LLM-based capsules call a model — by default the NUXS-managed proxy, optionally your own key.
-
----
-
-## Roadmap & openness
-
-We believe the auditable surface of NUXS should be **as open as possible without giving away the engine that pays the bills**. Today that means:
-
-- **Open**: the full benchmark dataset (this repository), the technical report, the manifesto, the website, the playground sample fixtures, and the CLI distribution on npm.
-- **Considered for the future**: open-sourcing the **algorithmic** capsules under a permissive license once the product is stable. The LLM-based capsules and the routing engine are expected to remain proprietary for the foreseeable future.
-
-Nothing here is a commitment to a specific date — these are the directions we're walking. If you want to influence the order, open an issue or write to us via `nuxs.ai`.
+Squeeze and Economy stack: compress the input *and* run it on the cheaper model.
 
 ---
 
-## Headline numbers
+## Coverage graph — what each mode reaches
 
-| Metric | Value |
-|---|---:|
-| Cumulative audited volume | **626,784,439** tokens |
-| Cumulative tokens saved | **574,252,194** |
-| Weighted margin (cumulative) | **91.62%** |
-| Current run (200M, v0.5.33) | **95.42%** · zero errors / 9,333 samples |
-| Profile — TEXT (RAG/log) | **95.57%** |
-| Profile — CODE (coding agent) | **95.27%** |
-| Taxonomy | **11 algorithmic + 6 LLM + 3 multimodal** |
-| Full consolidated study | **[BENCHMARK-626M.md](BENCHMARK-626M.md)** |
-
-All numbers measured with `cl100k_base` via the public `gpt-tokenizer` package. Full per-capsule and per-run breakdown in **[BENCHMARK-626M.md](BENCHMARK-626M.md)**.
-
----
-
-## How to read the numbers
-
-The aggregate published is a **floor**, not a ceiling. Most of the study uses seeded synthetic inputs with high entropy and low redundancy — deliberately designed to measure the worst case. Real inputs carry natural redundancy that synthetic does not reproduce, and consistently compress more. Where direct comparison with real data is available, the report shows structural capsules climbing from synthetic to real:
-
-| Capsule | Synthetic | Real |
-|---|---:|---:|
-| codebase | 73.1% | 78.2% / 95.2% * |
-| diff | 71.7% | ~79% |
-| schema | 45.3% | ~67% |
-| log / api / build | already at ceiling | ~99% |
-
-\* Two reproducible criteria for codebase in real use: 78.2% over the full universe of 6,050 files (lower auditable bound), and 95.2% over a deterministic top-40 of the largest production files (typical hook regime). Both have raw published.
-
-Capsules with lower aggregate margin (schema, pdf) correspond to data types with high informational density — every element is signal and there is no significant redundancy to discard without loss. These technical ceilings are documented in the report.
-
----
-
-## Reproducing the metrics
-
-Every metric in the report is recomputable from the published raw files.
-
-```bash
-# 1. Install the tokenizer
-npm install gpt-tokenizer
-
-# 2. For each line in any raw file, recompute:
-#    ratio    = in_tokens / out_tokens
-#    pct_saved = (1 - out_tokens / in_tokens) * 100
-
-# 3. Aggregate by capsule, by size bucket, or by run.
-
-# 4. Compare with the corresponding *-summary.json file.
-```
-
-Algorithmic capsules (11 of 17) are deterministic — the same input produces the same output byte-for-byte. LLM-based capsules (6 of 17) are sampled at low temperature; the raw files declare `N` and `provider` per configuration.
-
-Each line of every raw file contains, at minimum:
+An agent's bill has two sides: **INPUT** (the context, re-read every turn — the bulk, ~91% cache-driven, so
+savings **compound**) and **OUTPUT** (the model's generations). Each mode reaches a different part:
 
 ```
-capsule, in_tokens, out_tokens, ratio, pct_saved, passthrough,
-seed (when applicable), sha256(input)
+                     0%        25%        50%        75%       100%
+                     ├──────────┼──────────┼──────────┼──────────┤
+
+═══ INPUT side (the bulk — re-read every turn, savings COMPOUND) ═════════════
+
+  Squeeze   reaches  ████████████████████████████████████████████░░░░░  80-90%
+            squeezes ███████████████████████████████████████████████░  99.1%
+            EFFECTIVE ███████████████████████████████████████░░░░░░░░░  80.8%   ◄ real input savings
+
+  Capsule   reaches  ███████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░  ~46→80%
+            squeezes ██████████████████████████████████████████████░░  87-95%
+
+═══ INPUT + OUTPUT side (only Economy reaches the output) ════════════════════
+
+  Economy   reaches  ██████████████████████████████████████████████████ all routed ◄
+            output ↓ █████████████████████████████████████████████████░  99.4%   ◄ saving on the OUTPUT
+            per-tok  ██████████████████████████████████████████████████ up to 179×  Opus fast $50 ÷ DeepSeek $0.28
+            scope    INPUT ███████████████  +  OUTPUT ███████████████   ◄ the only mode that touches OUTPUT
 ```
 
-Bucket runs add `size_bucket`; weighted runs add `weight_pct`; LLM runs add `N` and `provider`.
+**How to read it.** *reaches* = how much of the traffic the mode touches (coverage). *squeezes/cheaper* = how
+hard it compresses what it touched (margin). *EFFECTIVE* = the product of the two = what lands on the bill.
+Squeeze touches **80-90%** of the input and compresses **~99%** of it → **~80% effective**; because input is
+re-read every turn, each removed token saves on **every subsequent turn**. Economy is the only mode that reaches
+the **output**: by routing generation to a cheaper model it cuts the **output cost up to ~179× (99.4%)** — measured
+on the output tokens of the real-billing run (a clean per-token price ratio, Opus fast $50/Mtok ÷ DeepSeek $0.28/Mtok).
 
 ---
 
-## File index
+## Squeeze — 400M tokens, two profiles, independently judged (reproducible)
 
-### Reports
+This is the headline run. Two content profiles, **code** and **written** (markdown / logs / config), all
+sourced from **public GitHub OSS files** (included in `raws/fixtures/`), measured with the public `cl100k`
+tokenizer.
 
-| File | Content |
-|---|---|
-| `benchmark-nuxs-en.docx` | Full technical report (English) |
-| `manifesto-nuxs-en.docx` | Companion manifesto (English) |
+| profile | total tokens | saved tokens | coverage | compression | **effective** | quality (1–10) |
+|---|---|---|---|---|---|---|
+| code | 200,018,026 | 165,368,804 | 83.2% | 99.4% | **82.7%** | 8.69 |
+| written | 200,002,396 | 157,948,723 | 79.8% | 98.9% | **79.0%** | 8.42 |
+| **overall** | **400,020,422** | **323,317,527** | **81.5%** | **99.1%** | **80.8%** | **8.57** |
 
-### Current consolidated study (626.8M cumulative, 91.62% weighted margin)
+- **coverage** = intercepted / total · **compression** = saved / intercepted · **effective** = saved / total.
+- **Quality** = an independent strong LLM judge scored, **per item**, whether a senior engineer can *continue
+  the task* from the compressed result alone. The scale is a **gate**: **1** = cannot continue (state
+  irrecoverably lost), **6–10** = can continue, graded by re-fetch friction (10 = everything + lean; 6 =
+  recoverable but heavy). No 2–5 — anything below "usable" collapses to 1. **3 judges per sheet, 138
+  judgments, zero unrecoverable items.**
 
-| File | Content |
-|---|---|
-| `BENCHMARK-626M.md` | **Consolidated study (626.8M, 91.62%) — full per-capsule and per-run breakdown** |
-| `benchmark-200m-summary.json` | Current run summary (200M, v0.5.33) |
-| `benchmark-200m-harness.mjs` | Current run harness (reproducible) |
-| `benchmark-200m-run.log` | Current run execution log |
-
-### Raw data feeding the cumulative 626.8M (JSONL — one sample per line)
-
-| File | Content | Samples |
-|---|---|---:|
-| `benchmark-raw.jsonl` | 1st round — synthetic | 328 |
-| `benchmark-large-raw.jsonl` | Large run — synthetic, XS→XXL buckets | 400 |
-| `benchmark-rag-raw.jsonl` | RAG/LLM profile — synthetic | 980 |
-| `benchmark-r2-raw.jsonl` | Round 2 — synthetic | 707 |
-| `benchmark-paid-raw.jsonl` | Backend run (includes multimodal) | 18 |
-| `benchmark-20-raw.jsonl` | Round 20 — XL/XXL samples | 30 |
-| `benchmark-code-raw.jsonl` | Programmer profile — synthetic | 71 |
-| `benchmark-codereal-raw.jsonl` | Real code — full corpus | 7,035 |
-| `benchmark-buildindex40-raw.jsonl` | Typical production hook — deterministic top-40 real | 40 |
-
-### Aggregate summaries (JSON)
-
-| File | Content |
-|---|---|
-| `benchmark-summary.json` | 1st round aggregate |
-| `benchmark-large-summary.json` | Per-bucket and per-capsule aggregates |
-| `benchmark-rag-summary.json` | Weighted RAG/LLM profile aggregate |
-| `benchmark-r2-summary.json` | Round 2 aggregate |
-| `benchmark-paid-summary.json` | Backend run aggregate (includes multimodal) |
-| `benchmark-20-summary.json` | Round 20 aggregate |
-| `benchmark-code-summary.json` | Programmer profile aggregate |
-| `benchmark-codereal-summary.json` | Real code corpus aggregate |
-| `benchmark-buildindex40-summary.json` | Typical hook run, with declared sampling criterion |
+Raw, per-item: [`raws/squeeze-400M-audit-trail.jsonl`](./raws/squeeze-400M-audit-trail.jsonl) — content hash
++ tokenizer counts + the 3 judge scores for each of the 46 source items.
 
 ---
 
-## Method in brief
+## Real-billing proof (production)
 
-- **Tokenizer**: `cl100k_base`, declared explicitly as a reproducible proxy. Other vendors' tokenizers differ by a few percentage points in absolute counts; reported ratios are robust because input and output are measured with the same ruler.
-- **Determinism**: algorithmic capsules are bit-for-bit deterministic. LLM-based capsules run at temperature 0.1 and report `N` per configuration.
-- **Passthrough**: when a capsule's output would be equal to or greater than the input, the engine returns the input intact and records `ratio = 1.0×`. These points are preserved in the raw and counted in the statistics.
-- **Sample identity**: each sample records `seed` (when applicable) and `sha256(input)` for independent verification.
-- **Sampling**: synthetic inputs are generated by a seeded deterministic PRNG to ensure bit-for-bit reproducibility. Real inputs come from a public-shaped corpus (code) and from a deterministic top-40 selection over two internal production repositories — the selection criterion is declared in the summary so any third party can reproduce it from equivalent corpora.
+These campaigns ran the same content twice — once raw, once through Nuxs — and compared what the provider
+*actually billed*. The savings reconcile with the provider's ledger.
 
-The full methodology, including bucket sizes, profile weights, and limits of the method, is documented in `benchmark-nuxs-en.docx` (sections 2, 10, and 11).
+The **effective margin** (`saved / total`) **is** the real economy. These Squeeze batteries are **input studies**, so
+it is measured on **input**, and the dollar economy proves it directly. Output is accounted **separately** — never
+folded into the input figure (mixing distorts it).
 
----
+| campaign | effective margin (input = saved/total) | input billed: raw → Nuxs | **$ saved (input)** | with output (secondary) |
+|---|---|---|---|---|
+| Squeeze A (edge 100) | **79.4%** | $0.450 → $0.093 | **$0.357** | 75.6% ($0.473 → $0.115) |
+| Squeeze B (edge 60) | **80.7%** | $0.4501 → $0.0870 | **$0.363** | 76.8% ($0.4726 → $0.1095) |
 
-## Sanitization
+Total study spend ($0.588 / $0.582) reconciles to the provider's own ledger — the audit anchor, **not** the economy.
 
-Real inputs in the published raw files were sanitized prior to publication:
-
-- Credentials, API tokens, and other secrets — **removed**.
-- Personally identifiable data — **removed**.
-- Local machine absolute paths — **replaced with neutral identifiers**.
-
-The preserved content is sufficient to recompute every metric reported in the document. The metrics in the report were recomputed on the sanitized raw to ensure consistency with what is public.
-
----
-
-## Study conduct
-
-The study was conducted internally by the NUXS team. The raw files in this repository are published precisely so that independent third parties can reaudit the numbers without depending on us. If you find a discrepancy between any reported metric and what you compute from the raw, please open an issue.
+**Economy** (separate lever, measured on **output**): the 4,500 output tokens cost **$0.2250** on the expensive
+provider vs **$0.00126** on the cheap one — a clean per-token price ratio (Opus fast $50/Mtok ÷ DeepSeek $0.28/Mtok =
+**178.6× ≈ 179×**). Because Economy genuinely touches **both** sides, the combined input+output multiple is also fair
+to report for it: **~61× total (98.4%)** in battery 3. (This combined figure is the **Economy-only exception** — for
+Squeeze, input and output are never mixed into one number.)
 
 ---
 
-## Versioning
+## Evolution — the real story is *coverage*
 
-| Field | Value |
-|---|---|
-| Engine version | `nuxs-capsule 0.5.37` (current on npm) · `0.5.33` (engine that ran the 200M study) |
-| Tokenizer | `cl100k_base` (via `gpt-tokenizer`) |
-| Study date | June 6, 2026 |
-| Report version | v3 (current) |
+High compression was never the hard part — Nuxs compresses what it touches by ~95%+. The breakthrough was
+**coverage**: getting the system to *touch* far more of the real traffic.
 
-Any future re-runs that change reported numbers will be tagged as a new release; this repository preserves the audit trail.
+| stage | tokens | margin on what's compressed | **coverage of traffic** | net effect |
+|---|---|---|---|---|
+| Early content-aware runs | 180M → 202M | 87% → 95% | ~46% (replay of 90 real sessions) | ~40% of the input bill |
+| **Now, with Squeeze** | **400M** | **~99%** | **80%+** | **~80% of the input bill** |
 
----
+The real economy is the **effective margin** (`saved / total`); the lever that lifted it was **coverage** (the
+ratio was already ~99%). Squeeze lifted coverage from ~46% to 80%+, roughly **doubling the real-world savings**
+while keeping quality at 8.57/10 with zero unrecoverable items. The real-session corpus behind these measurements
+grew from **90 to 100 sessions**.
 
-## Links
-
-- Website: [nuxs.ai](https://nuxs.ai)
-- Playground: [nuxs.ai/playground](https://nuxs.ai/playground)
-- Benchmark UI: [nuxs.ai/benchmark](https://nuxs.ai/benchmark)
-- Download / install: [nuxs.ai/download](https://nuxs.ai/download)
-- Technical report (English): `benchmark-nuxs-en.docx`
-- Manifesto (English): `manifesto-nuxs-en.docx`
+> Note (transparency): the ~46% figure is *coverage measured on mixed real-session replay*; the 80%+ figure
+> is *coverage on selected corpora*. Different measurement bases — reported openly, not blended.
 
 ---
 
-## License
+## What we learned (audited findings)
 
-The benchmark data, summaries, and reports in this repository are published under **CC BY 4.0** for auditing, replication, and academic citation. See `LICENSE` for details. The NUXS engine itself is proprietary; this repository contains measurement outputs and public documentation only.
+1. **Cheap LLM judges don't work** for fine quality comparison — they collapse to ties (position / verbosity
+   bias). The judge must be strong and blind. We use a strong independent judge, multiple per sheet.
+2. **The bill is ~91% cache** — context is re-read every turn — so compression has a **compounding effect**:
+   a token removed from context saves on *every* subsequent turn.
+3. **Effective savings depend on content density.** File/code-heavy context compresses to ~80%; chat-heavy
+   sessions less. We report per profile and **never** average them into a single misleading number.
 
 ---
 
-<p align="center">
-  <sub>© NUXS · <a href="https://nuxs.ai">nuxs.ai</a></sub>
-</p>
+## Reproduce it yourself
+
+Everything in `raws/` is enough to verify the Squeeze run end-to-end without trusting us:
+1. Take any source file in `raws/fixtures/` → hash it → matches the `sha256` in the audit trail.
+2. Count its tokens with `cl100k` → matches `in_tok`.
+3. The trail records the compressed size (`out_tok`) and the saving per item.
+4. Re-run the quality judge (original vs. the compressed reference) with the rubric above → reproduce the score.
+
+Full recipe: [`HOW-TO-VERIFY.md`](./HOW-TO-VERIFY.md).
+
+---
+
+*Benchmark date: 2026-06-20. Tokens audited: 1,026,804,861. Quality: 8.57/10, 0 unrecoverable. All raws included.*
