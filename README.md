@@ -25,7 +25,7 @@ each one with audited numbers and reproducible raws.
 
 | Mode | What it gives you | Measured result |
 |---|---|---|
-| **Capsule** | Dense, type-aware compression of tool output | aggregate margin **87–95%** per run (peaks ~99.8%) |
+| **Capsule** | Dense, type-aware compression of tool output | aggregate margin **87–95%** per run (peaks 99–100%) |
 | **Squeeze** | Removes cold/superseded context, leaving a cheap re-fetchable reference | **79–81% effective** input reduction |
 | **Economy** | Routes batch/mechanical work to a cheaper model | **99.4% cheaper output (up to ~179×)** on eligible work |
 
@@ -53,7 +53,7 @@ savings **compound**) and **OUTPUT** (the model's generations). Each mode reache
 
 ═══ INPUT + OUTPUT side (only Economy reaches the output) ════════════════════
 
-  Economy   reaches  ██████████████████████████████████████████████████ all routed ◄
+  Economy   reaches  ██████████████████████████████████████████████████ 100%   ◄ of routed work
             output ↓ █████████████████████████████████████████████████░  99.4%   ◄ saving on the OUTPUT
             per-tok  ██████████████████████████████████████████████████ up to 179×  Opus fast $50 ÷ DeepSeek $0.28
             scope    INPUT ███████████████  +  OUTPUT ███████████████   ◄ the only mode that touches OUTPUT
