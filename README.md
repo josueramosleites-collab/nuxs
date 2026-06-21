@@ -18,8 +18,8 @@
 
 **Get a free license at [nuxs.ai/register](https://nuxs.ai/register?next=/painel)** — the panel hands you a one-click installer (macOS · Windows · Linux) and your license. The free tier is metered (50M tokens lifetime · 3 devices), so the install is tied to an account from day one.
 
-> **91.62%** weighted margin over **626,784,439 cumulative auditable tokens** · current run **95.42%** (200M, v0.5.33) · up to **99%** on log/api/build/RAG capsules · tokenizer: `cl100k_base`.
-> Every metric in this repo is recomputable from the published raw files. Full consolidated study: **[BENCHMARK-626M.md](BENCHMARK-626M.md)**.
+> **1,026,804,861 cumulative auditable tokens** (capsules 626.8M · Squeeze 400M) · capsules **91.62%** margin · Squeeze **80.8% effective** · Economy **up to 179× on output** · real billing reconciled to the provider's own ledger · tokenizer: `cl100k_base`.
+> Every metric in this repo is recomputable from the published raw files. **Full June 2026 study: [NUXS-Benchmark-June-2026.md](NUXS-Benchmark-June-2026.md)** · previous (capsules-only): [BENCHMARK-626M.md](BENCHMARK-626M.md).
 
 ---
 
