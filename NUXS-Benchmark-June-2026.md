@@ -81,7 +81,7 @@ NUXS is a **three-layer engine**. The layers stack: each reaches a saving the pr
 
 ### Layer 1 — Capsule (specialist compressors, runs first)
 
-**17 specialist capsules + 3 multimodal.** The capsule is the **first stage of the pipeline**. Each capsule is an *expert for one data type* (logs, SQL, stack traces, diffs, test output, network, build, API spec, …): when the data **is its type**, it compresses it the best way possible — a dense, structure-preserving representation, and better than any generic compressor could achieve. Aggregate margin **87–95%** per run on the slice it touches (peaks 99–100%). Whatever the capsule *does not* catch flows on to the next layer.
+**17 specialist capsules + 3 multimodal.** The capsule is the **first stage of the pipeline**. Each capsule is an *expert for one data type* (logs, SQL, stack traces, diffs, test output, network, build, API spec, …): when the data **is its type**, it compresses it the best way possible — a dense, structure-preserving representation, and better than any generic compressor could achieve. Aggregate margin **87–95%** per run on the slice it touches (peaks ~99.8%). Whatever the capsule *does not* catch flows on to the next layer.
 
 ### Layer 2 — Squeeze (catches the rest + cross-message, runs AFTER the capsules)
 
@@ -106,7 +106,7 @@ The capsule always runs first because it compresses what is its type best. What 
 
 | Layer | Reaches | Headline (audited) |
 |---|---|---|
-| **Capsule** | input (its type) | margin 87–95% (peaks 99–100%) |
+| **Capsule** | input (its type) | margin 87–95% (peaks ~99.8%) |
 | **Squeeze** | input (any) | **80.8% effective · 99.1% compression · coverage 80%+** |
 | **Economy** | output + input | **up to 179× output (99.4%) · ~61× combined (98.4%)** |
 
@@ -136,7 +136,7 @@ An agent's bill has two sides: **input** (the context, re-read every turn — th
 
 | Layer | Metric | Value |
 |---|---|---|
-| **Economy** | reaches | 100% |
+| **Economy** | reaches | all routed |
 | | output ↓ | 99.4% |
 | | per token | **up to 179×** |
 
@@ -359,7 +359,7 @@ The Squeeze judge answers only 1 or 6–10. There is no 2–5. The reason: anyth
 
 ## 11 — Compression is not savings — the three quantities we report
 
-Most published measurements report a single number — the compression ratio over what was compressed. That number, in isolation, **overstates the real economy**, because no honest system compresses 100% of the traffic: part of the data passes raw by design (content the agent needs intact, small files where the overhead exceeds the gain).
+Most published measurements report a single number — the compression ratio over what was compressed. That number, in isolation, **overstates the real economy**, because no honest system compresses all of the traffic: part of the data passes raw by design (content the agent needs intact, small files where the overhead exceeds the gain).
 
 We report three distinct quantities, with fixed definitions:
 
@@ -413,9 +413,9 @@ The per-capsule distribution below is from the 200M run (the most recent capsule
 | threads | LLM | 10,001,241 | 91.6% | 601 |
 | events | LLM | 9,070,336 | 99.5% | 88 |
 | prompt | algo | 8,012,934 | 99.8% | 398 |
-| api | algo | 7,195,617 | 100% | 9 |
+| api | algo | 7,195,617 | 99.4% | 9 |
 | sql | LLM | 5,010,920 | 99.2% | 34 |
-| network | algo | 3,563,305 | 100% | 5 |
+| network | algo | 3,563,305 | 99.3% | 5 |
 | stack | LLM | 2,004,372 | 90.5% | 277 |
 | schema | algo | 2,000,200 | 77.0% | 292 |
 | diff | algo | 1,537,461 | 94.5% | 37 |
